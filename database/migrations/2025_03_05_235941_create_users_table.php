@@ -10,24 +10,22 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name')->unique();
-            $table->string('username')->nullable();
-            $table->string('email')->nullable();
-            $table->string('password')->nullable();
-            $table->foreignId('user_level')->constrained('user_groups')->onDelete('cascade');
-            $table->string('image')->default('no_image.jpg');
-            $table->enum('status',[0,1]);
-            $table->dateTime('last_login');
-            $table->timestamps();
-
-
-        });
-
-
-
+    {// Dans votre fichier de migration
+Schema::create('users', function (Blueprint $table) {
+    $table->id();
+    $table->string('name')->unique();
+    $table->string('username')->nullable();
+    $table->string('email')->nullable();
+    $table->string('password')->nullable();
+    $table->enum('role', ['medcin', 'infirmier', 'secretaire', 'administratif', 'technicien']);
+    $table->string('specialite')->nullable(); // Ajout du champ spécialité
+    $table->string('image')->default('no_image.jpg');
+    $table->tinyInteger('status')->default(1);
+    $table->time('heure_debut')->nullable();
+    $table->time('heure_fin')->nullable();
+    $table->dateTime('last_login')->nullable();
+    $table->timestamps();
+});
     }
 
     /**
@@ -35,8 +33,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-
         Schema::dropIfExists('users');
-
     }
 };
+

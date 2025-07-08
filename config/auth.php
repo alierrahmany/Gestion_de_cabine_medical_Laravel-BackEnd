@@ -42,7 +42,7 @@ return [
     ],
 
     'api' => [
-        'driver' => 'session', // Or 'token' if you're using API tokens
+        'driver' => 'sanctum', // Or 'token' if you're using API tokens
         'provider' => 'users', // Use the 'utilisateurs' provider
     ],
 ],
