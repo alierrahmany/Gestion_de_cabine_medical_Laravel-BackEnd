@@ -19,8 +19,6 @@ return new class extends Migration
             $table->string('telephone')->nullable();
             $table->string('email')->nullable();
             $table->text('adresse')->nullable();
-            $table->text('antecedents_medicaux')->nullable();
-            $table->boolean('hospitalise')->default(false); 
             $table->timestamps();
         });
     }

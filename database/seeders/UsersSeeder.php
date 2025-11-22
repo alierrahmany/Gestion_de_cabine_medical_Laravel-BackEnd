@@ -16,7 +16,7 @@ class UsersSeeder extends Seeder
             [
                 'name' => 'Medcin',
                 'email' => 'medcin@gmail.com',
-                'password' => Hash::make('password'),
+                'password' => Hash::make('medcin123'),
                 'role' => 'medcin',
                 'image' => 'no_image.jpg',
                 'status' => 1,
@@ -27,22 +27,9 @@ class UsersSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'name' => 'Infirmier',
-                'email' => 'infirmier@gmail.com',
-                'password' => Hash::make('password'),
-                'role' => 'infirmier',
-                'image' => 'no_image.jpg',
-                'status' => 1,
-                'heure_debut' => '07:00:00',
-                'heure_fin' => '15:00:00',
-                'last_login' => null,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
                 'name' => 'Secretaire',
                 'email' => 'secretaire@gmail.com',
-                'password' => Hash::make('password'),
+                'password' => Hash::make('secretaire123'),
                 'role' => 'secretaire',
                 'image' => 'no_image.jpg',
                 'status' => 1,
@@ -55,7 +42,7 @@ class UsersSeeder extends Seeder
             [
                 'name' => 'Administratif',
                 'email' => 'administratif@gmail.com',
-                'password' => Hash::make('password'),
+                'password' => Hash::make('admin123'),
                 'role' => 'administratif',
                 'image' => 'no_image.jpg',
                 'status' => 1,
@@ -68,7 +55,7 @@ class UsersSeeder extends Seeder
             [
                 'name' => 'Technicien',
                 'email' => 'technicien@gmail.com',
-                'password' => Hash::make('password'),
+                'password' => Hash::make('technicien123'),
                 'role' => 'technicien',
                 'image' => 'no_image.jpg',
                 'status' => 1,
@@ -78,19 +65,7 @@ class UsersSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-            [
-                'name' => 'salma',
-                'email' => 'salmamaadour3@gmail.com',
-                'password' => Hash::make('password'),
-                'role' => 'technicien',
-                'image' => 'no_image.jpg',
-                'status' => 1,
-                'heure_debut' => '06:00:00',
-                'heure_fin' => '14:00:00',
-                'last_login' => null,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]
+            
         ]);
     }
 }

@@ -64,17 +64,6 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/{id}', [OrdonnanceController::class, 'destroy']);
         Route::get('/patients/{patient_id}/ordonnances', [OrdonnanceController::class, 'getByPatient']);
     });
-
-    // Observation routes
-    Route::prefix('observations')->group(function () {
-        Route::get('/', [ObservationController::class, 'index']);
-        Route::post('/', [ObservationController::class, 'store']);
-        
-        Route::get('/{id}', [ObservationController::class, 'show']); // Récupérer une observation spécifique
-        Route::put('/{id}', [ObservationController::class, 'update']); // Modifier une observation
-        Route::delete('/{id}', [ObservationController::class, 'destroy']);
-    });
-
     // Equipment routes
     Route::prefix('equipments')->group(function () {
         Route::get('/', [EquipmentController::class, 'index']);
@@ -94,7 +83,6 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::put('/{id}/complete', [MaintenanceRequestController::class, 'complete']);
     });
 
-    // Conge routes
 
     // Conge routes
 

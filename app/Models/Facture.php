@@ -16,7 +16,6 @@ class Facture extends Model
         'date_facture',
         'montant',
         'statut',
-        'details',
     ];
 
     public function patient()

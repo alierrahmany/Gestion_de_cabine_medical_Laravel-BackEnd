@@ -17,7 +17,7 @@ Schema::create('users', function (Blueprint $table) {
     $table->string('username')->nullable();
     $table->string('email')->nullable();
     $table->string('password')->nullable();
-    $table->enum('role', ['medcin', 'infirmier', 'secretaire', 'administratif', 'technicien']);
+    $table->enum('role', ['medcin', 'secretaire', 'administratif', 'technicien']);
     $table->string('specialite')->nullable(); // Ajout du champ spécialité
     $table->string('image')->default('no_image.jpg');
     $table->tinyInteger('status')->default(1);

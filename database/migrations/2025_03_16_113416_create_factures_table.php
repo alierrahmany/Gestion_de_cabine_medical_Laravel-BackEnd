@@ -17,7 +17,6 @@ return new class extends Migration
         $table->date('date_facture');
         $table->decimal('montant', 8, 2);
         $table->string('statut');
-        $table->text('details')->nullable();
         $table->timestamps();
     });
 }

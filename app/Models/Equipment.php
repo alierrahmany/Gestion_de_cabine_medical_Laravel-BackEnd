@@ -14,19 +14,9 @@ class Equipment extends Model
     protected $fillable = [
         'name',
         'type',
-        'status',
-        'last_maintenance',
+        
     ]; // Définition des champs modifiables
 
-    protected $casts = [
-        'last_maintenance' => 'date',
-    ]; // Cast de la colonne date
 
-    /**
-     * Définition des statuts possibles pour un équipement.
-     */
-    public static function statuses()
-    {
-        return ['actif', 'inactif', 'en maintenance'];
-    }
+
 }

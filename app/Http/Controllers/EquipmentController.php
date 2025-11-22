@@ -1,5 +1,4 @@
 <?php
-// app/Http/Controllers/EquipmentController.php
 namespace App\Http\Controllers;
 
 use App\Models\Equipment;
@@ -7,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
 class EquipmentController extends Controller {
-    // Récupérer tous les équipements
     public function index()
     {
         try {
@@ -18,15 +16,15 @@ class EquipmentController extends Controller {
             return response()->json(['error' => 'Erreur lors de la récupération des équipements'], 500);
         }
     }
-    // Créer un nouvel équipement
+
     public function store(Request $request)
     {
         try {
             $validated = $request->validate([
                 'name' => 'required|string|max:255',
                 'type' => 'required|string|max:255',
-                'status' => 'required|string|in:actif,inactif,en maintenance',
-                'last_maintenance' => 'required|date',
+                // 'status' a été retiré de la validation
+                // 'last_maintenance' a été retiré si vous ne l'utilisez plus
             ]);
             
             $equipment = Equipment::create($validated);
@@ -37,7 +35,6 @@ class EquipmentController extends Controller {
         }
     }
     
-    // Récupérer un équipement spécifique
     public function show($id)
     {
         try {
@@ -49,7 +46,6 @@ class EquipmentController extends Controller {
         }
     }
     
-    // Mettre à jour un équipement
     public function update(Request $request, $id)
     {
         try {
@@ -58,8 +54,8 @@ class EquipmentController extends Controller {
             $validated = $request->validate([
                 'name' => 'sometimes|string|max:255',
                 'type' => 'sometimes|string|max:255',
-                'status' => 'sometimes|string|in:actif,inactif,en maintenance',
-                'last_maintenance' => 'sometimes|date',
+                // 'status' a été retiré de la validation
+                // 'last_maintenance' a été retiré si vous ne l'utilisez plus
             ]);
             
             $equipment->update($validated);
@@ -70,7 +66,6 @@ class EquipmentController extends Controller {
         }
     }
     
-    // Supprimer un équipement
     public function destroy($id)
     {
         try {

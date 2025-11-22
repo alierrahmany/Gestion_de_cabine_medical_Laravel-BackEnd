@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id(); // Clé primaire auto-incrémentée
             $table->string('name'); // Nom de l'équipement
             $table->string('type'); // Type d'équipement (ex: Scanner, Imprimante 3D)
-            $table->enum('status', ['actif', 'inactif', 'en maintenance'])->default('actif'); // Statut de l'équipement
-            $table->date('last_maintenance')->nullable(); // Dernière date de maintenance
             $table->timestamps(); // Colonnes created_at et updated_at
         });
     }
